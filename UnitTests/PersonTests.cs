@@ -1,15 +1,12 @@
-
-
-
 namespace UnitTests
 {
     public class PersonTests
     {
-        //[Fact]
+
         [Theory]
         [InlineData(null)]
         [InlineData("")]
-        public void NewPerson_FirstNameNullOrEmpty(string? firstName)
+        public void NewPerson_FirstNameNullOrEmptyShouldFail(string firstName)
         {
             Exception? result = Assert.Throws<Exception>(() => new Person(1, firstName, "Svensson"));
             Assert.NotNull(result);
@@ -19,10 +16,35 @@ namespace UnitTests
         [Theory]
         [InlineData(null)]
         [InlineData("")]
-        public void NewPerson_LastNameNullOrEmpty(string? lastName)
+        public void NewPerson_LastNameNullOrEmptyShouldFail(string lastName)
         {
             Exception? result = Assert.Throws<Exception>(() => new Person(1, "Joe", lastName));
             Assert.NotNull(result);
         }
+
+        [Fact]
+        public void NewPerson_VerifyID()
+        {
+            int TestValue = 43153;
+            Person Test = new(TestValue, "Jan", "Svensson");
+            Assert.Equal(TestValue, Test.ID);
+        }
+
+        [Fact]
+        public void NewPerson_VerifyFirstName()
+        {
+            string TestValue = "Janne";
+            Person Test = new(1, TestValue, "Svensson");
+            Assert.Equal(TestValue, Test.FirstName);
+        }
+
+        [Fact]
+        public void NewPerson_VerifyLastName()
+        {
+            string TestValue = "Svensson";
+            Person Test = new(1, "Jan", TestValue);
+            Assert.Equal(TestValue, Test.LastName);
+        }
+
     }
 }

@@ -1,19 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-
-namespace GR44_W3_ToDoIt.Models
+﻿namespace GR44_W3_ToDoIt.Models
 {
     public class Person
     {
-        public int ID 
-        {
-            get => Id;
-        }
+        public int ID { get => Id; }
         private readonly int Id; // As instructed
 
         public string FirstName 
@@ -23,7 +12,7 @@ namespace GR44_W3_ToDoIt.Models
         }
         private string firstName;
 
-        string LastName 
+        public string LastName 
         {
             get => lastName; 
             [MemberNotNull(nameof(lastName))] set => lastName = value?.Length > 0 ? value : throw new Exception($"{nameof(LastName)} can't be empty!");

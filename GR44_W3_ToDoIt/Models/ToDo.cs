@@ -1,9 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
-
-[assembly: InternalsVisibleTo("UnitTests")]
-
-namespace GR44_W3_ToDoIt.Models
+﻿namespace GR44_W3_ToDoIt.Models
 {
     internal class ToDo
     {
@@ -32,6 +27,5 @@ namespace GR44_W3_ToDoIt.Models
             Done = false;
             Assignee = null;
         }
-
     }
 }

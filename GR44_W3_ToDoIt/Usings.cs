@@ -1,0 +1,11 @@
+﻿global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
+global using GR44_W3_ToDoIt;
+global using GR44_W3_ToDoIt.Data;
+global using GR44_W3_ToDoIt.Models;
+global using System.Diagnostics.CodeAnalysis;
+global using System.Runtime.CompilerServices;
+global using static System.Console;

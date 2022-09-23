@@ -1,26 +1,11 @@
-﻿
-namespace GR44_W3_ToDoIt.Data
+﻿namespace GR44_W3_ToDoIt.Data
 {
     internal class ToDoSequencer
     {
         private static int toDoItemId = default;
-        private static object dummy = new object(); // not really a multi threaded environment but the tests are
+        public static object LockingDummy = new object();
 
-        public static int NextToDoItemID()
-        {
-
-            lock (dummy)
-            {
-                return ++toDoItemId;
-            }
-        }
-
-        public static void Reset()
-        {
-            lock (dummy)
-            {
-                toDoItemId = 0;
-            }
-        }
+        public static int NextToDoItemID() => ++toDoItemId;
+        public static void Reset() => toDoItemId = default;
     }
 }
